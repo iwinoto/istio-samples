@@ -42,8 +42,8 @@ spec:
     spec:
       containers:
       - name: ratings
-        image: istio/examples-bookinfo-ratings-v1:1.9.0
-        imagePullPolicy: IfNotPresent
+        image: iwinoto/examples-bookinfo-ratings-v1:1.9.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 9080
 ---

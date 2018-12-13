@@ -81,14 +81,17 @@ dispatcher.onGet(/^\/ratings\/[0-9]*/, function (req, res) {
     } else {
       MongoClient.connect(url, function (err, db) {
         if (err) {
+          console.error("error: could not connect to ratings database")
           res.writeHead(500, {'Content-type': 'application/json'})
-          res.end(JSON.stringify({error: 'could not connect to ratings database'}))
+          res.end(JSON.stringify({error: 'Could not connect to ratings database'}))
         } else {
           db.collection('ratings').find({}).toArray(function (err, data) {
             if (err || data == null) {
+              console.error("error: could not load ratings from database")
               res.writeHead(500, {'Content-type': 'application/json'})
-              res.end(JSON.stringify({error: 'could not load ratings from database'}))
+              res.end(JSON.stringify({error: 'Could not load ratings from database'}))
             } else {
+              console.log("info: Loaded ratings from database")
               firstRating = data[0].rating
               secondRating = data[1].rating
               var result = {

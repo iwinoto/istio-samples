@@ -28,7 +28,7 @@ fi
 
 echo "using NAMESPACE=${NAMESPACE}"
 
-protos=( destinationrules virtualservices gateways )
+protos=( destinationrules virtualservices gateways serviceentry )
 for proto in "${protos[@]}"; do
   for resource in $(kubectl get -n ${NAMESPACE} "$proto" -o name); do
     kubectl delete -n ${NAMESPACE} "$resource";

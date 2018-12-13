@@ -29,8 +29,8 @@ spec:
     spec:
       containers:
       - name: reviews
-        image: istio/examples-bookinfo-reviews-v2:1.9.0
-        imagePullPolicy: IfNotPresent
+        image: iwinoto/examples-bookinfo-reviews-v2:1.9.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 9080
 ---
