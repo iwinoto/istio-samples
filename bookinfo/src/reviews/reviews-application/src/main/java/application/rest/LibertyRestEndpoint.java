@@ -124,7 +124,7 @@ public class LibertyRestEndpoint extends Application {
            return j;
         }
       }else{
-        System.out.println("Error: unable to contact "+ratings_service+" got status of "+statusCode);
+        System.err.println("Error: unable to contact "+ratings_service+" got status of "+statusCode);
         return null;
       }
     }
